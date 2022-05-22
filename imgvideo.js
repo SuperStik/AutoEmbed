@@ -27,6 +27,7 @@ function submitVideo(url) {
 	video.width = window.innerWidth;
 	video.height = window.innerHeight;
 	video.autoplay = true;
+	video.controls = true;
 	document.body.appendChild(video);
 	window.onresize = windowResized;
 }

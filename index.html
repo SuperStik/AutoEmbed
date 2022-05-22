@@ -5,7 +5,7 @@
 			:root {
 				color-scheme: light dark;
 			}
-			h1, h5 {
+			h1, h5, noscript {
 				text-align: center;
 			}
 			div.center {
@@ -16,17 +16,33 @@
 	</head>
 	<body>
 		<h1>Auto-Embed Content in a Browser Window</h1>
-		<h5><del>Enter the content URL and specify whether or not it is a video.</del> <ins>This is a work in progress, please manually create the URL instead for the time being!</ins></h5>
+		<h5>Enter the content URL and specify whether or not it is a video.</h5>
 		<div class="center">
 			<div>
 			<label>Content URL:</label>
-			<input type="url" disabled>
+			<input id="url" placeholder="https://example.com" type="url">
 			<br>
-			<input type="checkbox" disabled>
+			<input id="video" type="checkbox">
 			<label>Video?</label>
 			<br>
-			<button disabled>Submit</button>
+			<button onclick="sendToEmbed()">Submit</button>
 			</div>
 		</div>
+		<noscript>JavaScript is either disabled or not supported in this browser. :(</noscript>
+		<script>
+			const txturl = document.getElementById("url");
+			const video = document.getElementById("video");
+
+			const sendToEmbed = () => {
+				let url = "https://superstik.github.io/AutoEmbed/generic_embed?";
+
+				if (video.checked) {
+					url += "video&";
+				}
+
+				url += "url=" + encodeURIComponent(txturl.value);
+				window.location.href = url;
+			}
+		</script>
 	</body>
 </html>
