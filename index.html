@@ -1,8 +1,32 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<style>
+			:root {
+				color-scheme: light dark;
+			}
+			h1, h5 {
+				text-align: center;
+			}
+			div.center {
+				display: flex;
+				justify-content: center;
+			}
+		</style>
 	</head>
 	<body>
-		<p>This site is a work in progress!</p>
+		<h1>Auto-Embed Content in a Browser Window</h1>
+		<h5><del>Enter the content URL and specify whether or not it is a video.</del> <ins>This is a work in progress, please manually create the URL instead for the time being!</ins></h5>
+		<div class="center">
+			<div>
+			<label>Content URL:</label>
+			<input type="url" disabled>
+			<br>
+			<input type="checkbox" disabled>
+			<label>Video?</label>
+			<br>
+			<button disabled>Submit</button>
+			</div>
+		</div>
 	</body>
 </html>
